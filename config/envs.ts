@@ -3,7 +3,7 @@ import * as path from "path";
 import * as Joi from "@hapi/joi";
 import { Config } from "../src/interfaces/config.interface";
 
-dotenv.config({ path: path.join(__dirname, "../.env") });
+dotenv.config({ path: require("find-config")(".env") });
 
 const envVarsSchema: any = Joi.object()
   .keys({

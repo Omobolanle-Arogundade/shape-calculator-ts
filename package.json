@@ -7,7 +7,7 @@
     "dev": "pm2 start ./node_modules/sucrase/bin/sucrase-node --name node-crudapi-dev -- ./src/server.ts --watch --color=true && pm2 log",
     "prebuild:dev": "rm -rf build",
     "build:dev": "tsc",
-    "postbuild:dev": "cp .env ./build/.env && pm2 start ecosystem.config.json && pm2 log",
+    "postbuild:dev": "pm2 start ecosystem.config.json && pm2 log",
     "prebuild": "sudo  rm -rf build",
     "build": "sudo tsc",
     "postbuild": "sudo pm2 start ecosystem.config.json && sudo pm2 log",
@@ -26,6 +26,7 @@
   "dependencies": {
     "@hapi/joi": "^17.1.1",
     "dotenv": "^8.2.0",
+    "find-config": "^1.0.0",
     "path": "^0.12.7",
     "winston": "^3.3.3"
   },
