@@ -16,19 +16,19 @@ const envVarsSchema: any = Joi.object()
       .description("Secret Key"),
     DB_HOST: Joi.string()
       .required()
-      .description("Secret Key"),
+      .description("Database Host"),
     DB_USER: Joi.string()
       .required()
-      .description("Secret Key"),
+      .description("Database Username"),
     DB_PASSWORD: Joi.string()
       .required()
-      .description("Secret Key"),
+      .description("Database Password"),
     DB_NAME: Joi.string()
       .required()
-      .description("Secret Key"),
+      .description("Database Name"),
     DB_DRIVER: Joi.string()
       .required()
-      .description("Secret Key"),
+      .description("Database Driver"),
   })
   .unknown();
 
@@ -50,7 +50,7 @@ export const envs: Config = {
     host: envVars.DB_HOST,
     username: envVars.DB_USER,
     password: envVars.DB_PASSWORD,
-    database: envVars.DB_NAME + envVars.NODE_ENV === "test" ? "-test" : "",
+    database: envVars.DB_NAME + (envVars.NODE_ENV === "test" ? "-test" : ""),
     dialect: envVars.DB_DRIVER,
   },
 };
