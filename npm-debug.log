@@ -1,0 +1,57 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/omobolanle/.nvm/versions/node/v6.17.1/bin/node',
+1 verbose cli   '/Users/omobolanle/.nvm/versions/node/v6.17.1/bin/npm',
+1 verbose cli   'run',
+1 verbose cli   'build:dev' ]
+2 info using npm@3.10.10
+3 info using node@v6.17.1
+4 verbose run-script [ 'prebuild:dev', 'build:dev', 'postbuild:dev' ]
+5 info lifecycle shapes-area-api@1.0.0~prebuild:dev: shapes-area-api@1.0.0
+6 verbose lifecycle shapes-area-api@1.0.0~prebuild:dev: unsafe-perm in lifecycle true
+7 verbose lifecycle shapes-area-api@1.0.0~prebuild:dev: PATH: /Users/omobolanle/.nvm/versions/node/v6.17.1/lib/node_modules/npm/bin/node-gyp-bin:/Users/omobolanle/Documents/projects/node/asb-coding-assignment/node_modules/.bin:/Users/omobolanle/.nvm/versions/node/v6.17.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/omobolanle/development/flutter/bin
+8 verbose lifecycle shapes-area-api@1.0.0~prebuild:dev: CWD: /Users/omobolanle/Documents/projects/node/asb-coding-assignment
+9 silly lifecycle shapes-area-api@1.0.0~prebuild:dev: Args: [ '-c', 'rm -rf build' ]
+10 silly lifecycle shapes-area-api@1.0.0~prebuild:dev: Returned: code: 0  signal: null
+11 info lifecycle shapes-area-api@1.0.0~build:dev: shapes-area-api@1.0.0
+12 verbose lifecycle shapes-area-api@1.0.0~build:dev: unsafe-perm in lifecycle true
+13 verbose lifecycle shapes-area-api@1.0.0~build:dev: PATH: /Users/omobolanle/.nvm/versions/node/v6.17.1/lib/node_modules/npm/bin/node-gyp-bin:/Users/omobolanle/Documents/projects/node/asb-coding-assignment/node_modules/.bin:/Users/omobolanle/.nvm/versions/node/v6.17.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/omobolanle/development/flutter/bin
+14 verbose lifecycle shapes-area-api@1.0.0~build:dev: CWD: /Users/omobolanle/Documents/projects/node/asb-coding-assignment
+15 silly lifecycle shapes-area-api@1.0.0~build:dev: Args: [ '-c', 'tsc' ]
+16 silly lifecycle shapes-area-api@1.0.0~build:dev: Returned: code: 0  signal: null
+17 info lifecycle shapes-area-api@1.0.0~postbuild:dev: shapes-area-api@1.0.0
+18 verbose lifecycle shapes-area-api@1.0.0~postbuild:dev: unsafe-perm in lifecycle true
+19 verbose lifecycle shapes-area-api@1.0.0~postbuild:dev: PATH: /Users/omobolanle/.nvm/versions/node/v6.17.1/lib/node_modules/npm/bin/node-gyp-bin:/Users/omobolanle/Documents/projects/node/asb-coding-assignment/node_modules/.bin:/Users/omobolanle/.nvm/versions/node/v6.17.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/omobolanle/development/flutter/bin
+20 verbose lifecycle shapes-area-api@1.0.0~postbuild:dev: CWD: /Users/omobolanle/Documents/projects/node/asb-coding-assignment
+21 silly lifecycle shapes-area-api@1.0.0~postbuild:dev: Args: [ '-c', 'pm2 start ecosystem.config.json && pm2 log' ]
+22 info lifecycle shapes-area-api@1.0.0~postbuild:dev: Failed to exec postbuild:dev script
+23 verbose stack Error: shapes-area-api@1.0.0 postbuild:dev: `pm2 start ecosystem.config.json && pm2 log`
+23 verbose stack spawn ENOENT
+23 verbose stack     at ChildProcess.<anonymous> (/Users/omobolanle/.nvm/versions/node/v6.17.1/lib/node_modules/npm/lib/utils/spawn.js:33:16)
+23 verbose stack     at emitTwo (events.js:106:13)
+23 verbose stack     at ChildProcess.emit (events.js:191:7)
+23 verbose stack     at maybeClose (internal/child_process.js:920:16)
+23 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:230:5)
+24 verbose pkgid shapes-area-api@1.0.0
+25 verbose cwd /Users/omobolanle/Documents/projects/node/asb-coding-assignment
+26 error Darwin 20.2.0
+27 error argv "/Users/omobolanle/.nvm/versions/node/v6.17.1/bin/node" "/Users/omobolanle/.nvm/versions/node/v6.17.1/bin/npm" "run" "build:dev"
+28 error node v6.17.1
+29 error npm  v3.10.10
+30 error file sh
+31 error code ELIFECYCLE
+32 error errno ENOENT
+33 error syscall spawn
+34 error shapes-area-api@1.0.0 postbuild:dev: `pm2 start ecosystem.config.json && pm2 log`
+34 error spawn ENOENT
+35 error Failed at the shapes-area-api@1.0.0 postbuild:dev script 'pm2 start ecosystem.config.json && pm2 log'.
+35 error Make sure you have the latest version of node.js and npm installed.
+35 error If you do, this is most likely a problem with the shapes-area-api package,
+35 error not with npm itself.
+35 error Tell the author that this fails on your system:
+35 error     pm2 start ecosystem.config.json && pm2 log
+35 error You can get information on how to open an issue for this project with:
+35 error     npm bugs shapes-area-api
+35 error Or if that isn't available, you can get their info via:
+35 error     npm owner ls shapes-area-api
+35 error There is likely additional logging output above.
+36 verbose exit [ 1, true ]

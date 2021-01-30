@@ -1,5 +1,4 @@
 import * as dotenv from "dotenv";
-import * as path from "path";
 import * as Joi from "@hapi/joi";
 import { Config } from "../src/interfaces/config.interface";
 

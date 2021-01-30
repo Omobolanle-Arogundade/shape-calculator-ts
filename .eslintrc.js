@@ -19,6 +19,7 @@ module.exports = {
   },
   rules: {
     camelcase: "off",
+    "no-console": "error",
     "@typescript-eslint/camelcase": "off",
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/no-namespace": "off",

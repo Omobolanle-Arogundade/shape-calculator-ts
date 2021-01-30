@@ -2,6 +2,7 @@ import { Sequelize, Error } from "sequelize";
 
 import config = require("../config/database");
 import { envs } from "../config/envs";
+import logger from "../config/logger";
 
 const env = envs.env || "development";
 
@@ -22,12 +23,12 @@ export default class Database {
     this.sequelize
       .authenticate()
       .then((): void => {
-        console.log(
+        logger.info(
           `Connection successful on database: ${this.sequelize.config.database}`
         );
       })
       .catch((error: Error): void => {
-        console.log(
+        logger.info(
           `Connection failed on database: ${this.sequelize.config.database}, ${error.message}`
         );
       });
