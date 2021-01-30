@@ -1,5 +1,5 @@
-import * as dotenv from "dotenv";
-import * as Joi from "@hapi/joi";
+import dotenv from "dotenv";
+import Joi from "@hapi/joi";
 import { Config } from "../src/interfaces/config.interface";
 
 dotenv.config({ path: require("find-config")(".env") });
@@ -27,7 +27,7 @@ const envVarsSchema: any = Joi.object()
       .description("Database Name"),
     DB_DRIVER: Joi.string()
       .required()
-      .description("Database Driver"),
+      .description("Database Driver")
   })
   .unknown();
 
@@ -43,13 +43,13 @@ export const envs: Config = {
   env: envVars.NODE_ENV,
   port: envVars.PORT,
   jwt: {
-    url: envVars.SECRET_KEY,
+    url: envVars.SECRET_KEY
   },
   database: {
     host: envVars.DB_HOST,
     username: envVars.DB_USER,
     password: envVars.DB_PASSWORD,
     database: envVars.DB_NAME + (envVars.NODE_ENV === "test" ? "-test" : ""),
-    dialect: envVars.DB_DRIVER,
-  },
+    dialect: envVars.DB_DRIVER
+  }
 };

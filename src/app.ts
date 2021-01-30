@@ -2,10 +2,11 @@ import { Sequelize } from "sequelize";
 
 import express = require("express");
 import cors = require("cors");
-import logger = require("morgan");
 
 import Database from "./database";
 import { IndexRoute } from "./routes";
+import { envs } from "../config/envs";
+import { MorganLogger } from "../config/morgan";
 
 class App {
   public express: express.Application;
@@ -29,7 +30,12 @@ class App {
   }
 
   private middlewares(): void {
-    this.express.use(logger("dev"));
+    if (envs.env !== "test") {
+      const morgan = new MorganLogger();
+      this.express.use(morgan.successHandler);
+      this.express.use(morgan.errorHandler);
+    }
+
     this.express.use(express.json());
     this.express.use(cors());
   }

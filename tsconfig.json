@@ -8,6 +8,7 @@
     "outDir": "build",
     "noImplicitAny": false,
     "noEmitHelpers": false,
+    "esModuleInterop": true,
     "declaration": false,
     "strict": true,
     "allowJs": true,

@@ -1,4 +1,4 @@
-import * as morgan from "morgan";
+import morgan from "morgan";
 import { envs } from "./envs";
 import { Logger } from "./logger";
 
@@ -15,11 +15,11 @@ export class MorganLogger extends Logger {
 
   public successHandler = morgan(MorganLogger.successResponseFormat, {
     skip: (req, res): boolean => res.statusCode >= 400,
-    stream: { write: (message): any => this.logger.info(message.trim()) },
+    stream: { write: (message): any => this.logger.info(message.trim()) }
   });
 
   public errorHandler = morgan(MorganLogger.errorResponseFormat, {
     skip: (req, res): boolean => res.statusCode < 400,
-    stream: { write: (message): any => this.logger.error(message.trim()) },
+    stream: { write: (message): any => this.logger.error(message.trim()) }
   });
 }

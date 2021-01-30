@@ -1,5 +1,4 @@
-import * as winston from "winston";
-import { Logger as WinstonLogger } from "winston";
+import winston, { Logger as WinstonLogger } from "winston";
 import { envs } from "./envs";
 
 export class Logger {
@@ -24,9 +23,9 @@ export class Logger {
     ),
     transports: [
       new winston.transports.Console({
-        stderrLevels: ["error"],
-      }),
-    ],
+        stderrLevels: ["error"]
+      })
+    ]
   });
 }
 
