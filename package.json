@@ -1,0 +1,19 @@
+{
+  "name": "shapes-area-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Omobolanle-Arogundade/asb-coding-assignment.git"
+  },
+  "author": "Omobolanle Aro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Omobolanle-Arogundade/asb-coding-assignment/issues"
+  },
+  "homepage": "https://github.com/Omobolanle-Arogundade/asb-coding-assignment#readme"
+}
