@@ -1,5 +1,5 @@
 module.exports = {
-  "config": "./config/database.js", //database config file reference
+  "config": "./build/config/database.js", //database config file reference
   "seeders-path": "./database/seeders", //remove if you don't use seeders
   "migrations-path": "./database/migrations" //remove if you don't use migrations
 };

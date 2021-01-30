@@ -20,5 +20,5 @@
     // ]
   },
   "exclude": ["node_modules", "build", "database", "examples"],
-  "include": ["src", "config", ".env"]
+  "include": ["src", "config"]
 }

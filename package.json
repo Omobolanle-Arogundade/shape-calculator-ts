@@ -11,7 +11,9 @@
     "prebuild": "sudo  rm -rf build",
     "build": "sudo tsc",
     "postbuild": "sudo pm2 start ecosystem.config.json && sudo pm2 log",
-    "stop": "pm2 delete all"
+    "stop": "pm2 delete all",
+    "db:migrate": "rm -rf build && tsc && sequelize db:migrate",
+    "db:seed": "rm -rf build && tsc && sequelize db:seed:all"
   },
   "repository": {
     "type": "git",

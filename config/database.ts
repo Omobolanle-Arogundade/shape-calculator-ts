@@ -5,7 +5,7 @@ require("dotenv").config();
 
 const {
   env,
-  database: { host, username, password, database, dialect },
+  database: { host, username, password, database, dialect }
 } = envs;
 
 const defaultConfig = {
@@ -19,17 +19,17 @@ const defaultConfig = {
     typeCast: (field, next): any => {
       if (field.type === "DATETIME") return field.string();
       return next();
-    },
-  },
+    }
+  }
 };
 
 const storageConfig = {
   migrationStorage: "json",
   migrationStoragePath: "./database/migration-metadata.json",
   seederStorage: "json",
-  seederStoragePath: "./database/seeder-metadata.json",
+  seederStoragePath: "./database/seeder-metadata.json"
 };
 
 module.exports = {
-  [env]: { ...defaultConfig, ...storageConfig },
+  [env]: { ...defaultConfig, ...storageConfig }
 };
