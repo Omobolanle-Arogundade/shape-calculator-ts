@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
 import Joi from "@hapi/joi";
-import { Config } from "../src/interfaces/config.interface";
+import { Config } from "../src/common/interfaces/config.interface";
 
 dotenv.config({ path: require("find-config")(".env") });
 
@@ -10,9 +10,15 @@ const envVarsSchema: any = Joi.object()
       .valid("production", "development", "test")
       .required(),
     PORT: Joi.number().default(3000),
-    SECRET_KEY: Joi.string()
+    JWT_SECRET_KEY: Joi.string()
       .required()
       .description("Secret Key"),
+    JWT_ACCESS_EXPIRATION_MINUTES: Joi.string()
+      .required()
+      .description("JWT Access expiration in minutes"),
+    JWT_REFRESH_EXPIRATION_DAYS: Joi.string()
+      .required()
+      .description("JWT Refresh expiration in days"),
     DB_HOST: Joi.string()
       .required()
       .description("Database Host"),
@@ -43,7 +49,9 @@ export const envs: Config = {
   env: envVars.NODE_ENV,
   port: envVars.PORT,
   jwt: {
-    url: envVars.SECRET_KEY
+    secret: envVars.JWT_SECRET_KEY,
+    accessExpirationMinutes: envVars.JWT_ACCESS_EXPIRATION_MINUTES,
+    refreshExpirationDays: envVars.JWT_REFRESH_EXPIRATION_DAYS
   },
   database: {
     host: envVars.DB_HOST,

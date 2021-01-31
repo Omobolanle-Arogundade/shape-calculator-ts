@@ -1,24 +1,29 @@
-'use strict';
+"use strict";
+const { hashSync } = require("bcryptjs");
+const now = new Date();
+const data = [
+  {
+    name: "Admin",
+    email: "admin@mail.com",
+    password: "123456",
+    created_at: now,
+    updated_at: now
+  }
+];
+
+function parseData(data) {
+  return data.map(user => {
+    user.password = hashSync(user.password, 10);
+    return user;
+  });
+}
 
 module.exports = {
-  up: async (queryInterface, Sequelize) => {
-    /**
-     * Add seed commands here.
-     *
-     * Example:
-     * await queryInterface.bulkInsert('People', [{
-     *   name: 'John Doe',
-     *   isBetaMember: false
-     * }], {});
-    */
+  up: queryInterface => {
+    return queryInterface.bulkInsert("users", parseData(data), {});
   },
 
-  down: async (queryInterface, Sequelize) => {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
+  down: queryInterface => {
+    return queryInterface.bulkDelete("users", null, {});
   }
 };

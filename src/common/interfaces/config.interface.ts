@@ -2,7 +2,9 @@ export declare interface Config {
   env: string;
   port: string | number;
   jwt: {
-    url: string;
+    secret: string;
+    accessExpirationMinutes: number;
+    refreshExpirationDays: number;
   };
   database: {
     host: string;

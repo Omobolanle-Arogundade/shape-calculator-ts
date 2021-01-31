@@ -1,6 +1,7 @@
 import { Response } from "express";
 import { ExceptionHandler } from "../handlers/exception.handler";
 import { HTTP } from "../constants/http.constant";
+import logger from "../../../config/logger";
 
 export default abstract class HttpController extends ExceptionHandler {
   /**
@@ -72,6 +73,7 @@ export default abstract class HttpController extends ExceptionHandler {
     res: Response,
     message: string = "Bad Request"
   ): Response => {
+    res.locals.errorMessage = message;
     return this.returnMessage(res, message, HTTP.BAD_REQUEST, true);
   };
 
@@ -84,6 +86,7 @@ export default abstract class HttpController extends ExceptionHandler {
     res: Response,
     message: string = "Unauthorized"
   ): Response => {
+    res.locals.errorMessage = message;
     return this.returnMessage(res, message, HTTP.UNAUTHORIZED, true);
   };
 
@@ -96,6 +99,7 @@ export default abstract class HttpController extends ExceptionHandler {
     res: Response,
     message: string = "Not Found"
   ): Response => {
+    res.locals.errorMessage = message;
     return this.returnMessage(res, message, HTTP.NOT_FOUND, true);
   };
 
@@ -106,8 +110,10 @@ export default abstract class HttpController extends ExceptionHandler {
    */
   public returnServerError = (
     res: Response,
-    message: string = "Internal Server Error"
+    message: string = "Internal Server Error",
+    stack?: string
   ): Response => {
+    res.locals.errorMessage = message + "\n" + stack;
     return this.returnMessage(res, message, HTTP.INTERNAL_SERVER_ERROR, true);
   };
 

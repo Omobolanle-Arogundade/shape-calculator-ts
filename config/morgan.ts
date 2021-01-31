@@ -2,7 +2,7 @@ import morgan from "morgan";
 import { envs } from "./envs";
 import { Logger } from "./logger";
 
-// morgan.token("message", (req, res): string => res.locals.errorMessage || "");
+morgan.token("message", (req, res): string => res["locals"].errorMessage || "");
 
 export class MorganLogger extends Logger {
   private static getIpFormat = (): string =>

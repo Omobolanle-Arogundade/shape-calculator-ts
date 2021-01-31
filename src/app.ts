@@ -43,13 +43,5 @@ class App {
   private routes(): void {
     this.express.use("/", new IndexRoute().router);
   }
-
-  /* uncomment this method to enable jobs */
-  /*
-    private jobs = (): void => {
-      this.schedule = new Schedule();
-      this.schedule.startJobs();
-    };
-  */
 }
 export default new App().express;
