@@ -15,8 +15,10 @@ export class TokenService {
   public generateToken(email: string, expires: Moment): string {
     const payload = {
       email,
-      iat: moment().unix(),
-      exp: expires.unix()
+      iat: moment()
+        .toDate()
+        .getTime(),
+      exp: expires.toDate().getTime()
     };
     return sign(payload, this.secretKey);
   }

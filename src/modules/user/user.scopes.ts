@@ -6,6 +6,9 @@ export const scopes = {
   full: {
     ...defaultScope
   },
+  list: {
+    ...defaultScope
+  },
   withPassword: {
     attributes: ["id", "name", "email", "password"]
   }

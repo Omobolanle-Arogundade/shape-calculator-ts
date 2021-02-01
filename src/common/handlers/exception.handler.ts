@@ -4,12 +4,12 @@ import { UniqueConstraintError, ValidationError } from "sequelize";
 export abstract class ExceptionHandler extends ErrorHandler {
   private _ERROR_TYPES = [
     {
-      type: ValidationError,
-      func: this.handleValidationError
-    },
-    {
       type: UniqueConstraintError,
       func: this.handleUniqueConstraintError
+    },
+    {
+      type: ValidationError,
+      func: this.handleValidationError
     }
   ];
 

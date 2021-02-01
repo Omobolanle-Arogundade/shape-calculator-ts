@@ -1,16 +1,15 @@
 import { hashSync } from "bcryptjs";
 import { DataTypes } from "sequelize";
 
-import { TimestampsModel } from "./../../common/classes/timestamps-model";
+import { TimestampsModel } from "../../common/classes/timestamps-model";
 import { defaultScope, scopes } from "./user.scopes";
 import { timestamps } from "../../common/constants/timestamps.constant";
 
 export default class User extends TimestampsModel {
   public id!: number;
   public email!: string;
+  public name: FunctionStringCallback;
   public password!: string;
-  public reset_password_token!: string;
-  public reset_password_expires!: Date;
 }
 
 const hooks = {
@@ -27,7 +26,8 @@ export const attributes = {
   },
   email: {
     type: DataTypes.STRING,
-    allowNull: false
+    allowNull: false,
+    unique: true
   },
   name: {
     type: DataTypes.STRING,

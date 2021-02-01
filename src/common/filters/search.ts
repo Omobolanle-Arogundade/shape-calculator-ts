@@ -1,4 +1,4 @@
-import { Op, WhereOptions } from "sequelize";
+import { Op } from "sequelize";
 import { Filter } from "../classes/filter";
 import { isDateType, isNumberType } from "../utils/types.util";
 

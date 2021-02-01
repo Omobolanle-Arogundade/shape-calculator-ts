@@ -30,12 +30,13 @@ export default abstract class CrudController extends HttpController {
   public get = async (req: Request, res: Response): Promise<Response> => {
     try {
       const id = +req.params.id;
-      if (!id)
+      const data = await this.service.get(id);
+      if (!data)
         return this.returnBadRequest(
           res,
           `ID for ${this.service.modelName} is invalid!`
         );
-      return this.returnData(res, await this.service.get(id));
+      return this.returnData(res, data);
     } catch (err) {
       return this.processException(res, err);
     }
@@ -90,17 +91,19 @@ export default abstract class CrudController extends HttpController {
    */
   public update = async (req: Request, res: Response): Promise<Response> => {
     const id = +req.params.id;
-    if (!id)
+    const data = await this.service.get(id);
+    if (!data)
       return this.returnNotFound(
         res,
         `ID for ${this.service.modelName} is invalid!`
       );
 
     try {
-      if (await this.service.update(req.body, id))
+      const newData = (await this.service.update(req.body, id))[1][0];
+      if (newData)
         return this.return(
           res,
-          await this.service.get(id),
+          newData,
           `${this.service.modelName} updated successfully!`
         );
 

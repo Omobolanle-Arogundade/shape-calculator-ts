@@ -42,7 +42,7 @@ export abstract class ErrorHandler {
       errors.push({
         type: "invalid",
         field: errorItem.path,
-        message: `Field ${errorItem.path} is invalid.`
+        message: `${errorItem.path} field is invalid.`
       });
     });
 

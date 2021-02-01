@@ -34,6 +34,7 @@ export abstract class CrudService {
   public all = async (options: any, scope: any = "full"): Promise<any> => {
     const where = await this.processFilters(options);
     const findOptions = await this.buildFindOptions(options);
+
     const data = await this.model
       .scope(scope)
       .findAndCountAll({ ...findOptions, where });
@@ -64,7 +65,12 @@ export abstract class CrudService {
    * @param id
    */
   public update = async (data: any, id: number): Promise<any> => {
-    return await this.model.update(data, { where: { id }, sideEffects: false });
+    return await this.model.update(data, {
+      where: { id },
+      sideEffects: false,
+      returning: true,
+      plain: true
+    });
   };
 
   /**
@@ -74,7 +80,11 @@ export abstract class CrudService {
    * @param where
    */
   public updateWhere = async (data: any, where: any): Promise<any> => {
-    return await this.model.update(data, { where });
+    return await this.model.update(data, {
+      where,
+      returning: true,
+      plain: true
+    });
   };
 
   /**
