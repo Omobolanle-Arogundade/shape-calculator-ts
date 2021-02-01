@@ -4,6 +4,7 @@ import { DataTypes } from "sequelize";
 import { TimestampsModel } from "../../common/classes/timestamps-model";
 import { defaultScope, scopes } from "./user.scopes";
 import { timestamps } from "../../common/constants/timestamps.constant";
+import Shape from "../shape/shape.model";
 
 export default class User extends TimestampsModel {
   public id!: number;
@@ -47,5 +48,12 @@ export const init = (sequelize): void => {
     scopes,
     ...timestamps,
     hooks
+  });
+
+  User.hasMany(Shape, {
+    foreignKey: {
+      name: "uid",
+      allowNull: false
+    }
   });
 };
