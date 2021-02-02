@@ -105,7 +105,12 @@ export abstract class CrudService {
   };
 
   public processFilters = async (options: any): Promise<any> => {
-    let where = {};
+    let where = options.user
+      ? {
+          uid: options.user
+        }
+      : {};
+
     if (this._filters.length) where[Op.and] = [];
 
     this._filters.forEach((filter): any => {

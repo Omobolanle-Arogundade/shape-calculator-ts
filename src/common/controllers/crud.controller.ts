@@ -58,6 +58,27 @@ export default abstract class CrudController extends HttpController {
       return this.processException(res, err);
     }
   };
+
+  /**
+   *
+   * @param req
+   * @param res
+   */
+  public indexPartition = async (
+    req: Request,
+    res: Response
+  ): Promise<Response> => {
+    try {
+      const {
+        authUser: { id: uid }
+      } = res.locals;
+      const options = { ...(await this.buildOptions(req.query)), user: uid };
+      return this.returnData(res, await this.service.all(options));
+    } catch (err) {
+      return this.processException(res, err);
+    }
+  };
+
   /**
    * store method
    *

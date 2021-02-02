@@ -15,7 +15,7 @@ export class UserRoute {
 
   public init(): void {
     this.router
-      .get("/", controller.index)
+      .get("/", auth.verifyAuth, controller.indexPartition)
       .post("/", auth.verifyAuth, controller.calculateArea);
   }
 }
