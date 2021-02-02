@@ -1,7 +1,7 @@
 import controller from "./user.controller";
 import { Router } from "express";
 import Middleware from "../../common/interfaces/middlewares.interface";
-import auth from "../../middlewares/auth";
+import auth from "../../middlewares/auth.middleware";
 
 export class UserRoute {
   public router: Router = Router();

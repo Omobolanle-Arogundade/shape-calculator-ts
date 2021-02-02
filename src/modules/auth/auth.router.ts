@@ -1,5 +1,9 @@
 import controller from "./auth.controller";
 import { Router } from "express";
+import { login } from "./auth.validator";
+import validateMiddleware from "../../middlewares/validate.middleware";
+
+const { validate } = validateMiddleware;
 
 export class AuthRouter {
   public controller = controller;
@@ -10,7 +14,7 @@ export class AuthRouter {
   }
 
   public init(): void {
-    this.router.post("/login", controller.login);
+    this.router.post("/login", validate(login), controller.login);
   }
 }
 
