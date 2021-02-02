@@ -1,8 +1,9 @@
 export const defaultScope = {
   attributes: [
     "id",
-    "result",
+    "area",
     "shape",
+    "uid",
     "created_at",
     "updated_at",
     "deleted_at"

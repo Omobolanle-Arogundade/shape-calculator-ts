@@ -34,7 +34,6 @@ export abstract class CrudService {
   public all = async (options: any, scope: any = "full"): Promise<any> => {
     const where = await this.processFilters(options);
     const findOptions = await this.buildFindOptions(options);
-
     const data = await this.model
       .scope(scope)
       .findAndCountAll({ ...findOptions, where });
