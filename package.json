@@ -10,7 +10,7 @@
     "postbuild:dev": "pm2 start ecosystem.config.json && pm2 log",
     "prebuild": "rm -rf build && npm run migrate && npm run seed",
     "build": "tsc",
-    "postbuild": "pm2 start ecosystem.config.json && pm2 log",
+    "postbuild": "pm2-runtime start ecosystem.config.js --env production",
     "stop": "pm2 delete all",
     "migrate": "rm -rf build && tsc && sequelize db:migrate",
     "seed": "rm -rf build && tsc && sequelize db:seed:all"
