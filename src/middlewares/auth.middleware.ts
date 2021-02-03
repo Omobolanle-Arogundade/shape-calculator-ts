@@ -1,7 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import { verify } from "jsonwebtoken";
 import { envs } from "../../config/envs";
-import logger from "../../config/logger";
 import HttpController from "../common/controllers/http.controller";
 import User from "../modules/user/user.model";
 

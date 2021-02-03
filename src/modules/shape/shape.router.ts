@@ -1,7 +1,11 @@
 import controller from "./shape.controller";
 import { Router } from "express";
 import Middleware from "../../common/interfaces/middlewares.interface";
-import auth from "../../middlewares/auth";
+import auth from "../../middlewares/auth.middleware";
+import validateMiddleware from "../../middlewares/validate.middleware";
+import ShapeValidator from "./shape.validator";
+
+const { validate } = validateMiddleware;
 
 export class UserRoute {
   public router: Router = Router();
@@ -15,8 +19,18 @@ export class UserRoute {
 
   public init(): void {
     this.router
-      .get("/", auth.verifyAuth, controller.indexPartition)
-      .post("/", auth.verifyAuth, controller.calculateArea);
+      .get(
+        "/",
+        auth.verifyAuth,
+        validate(ShapeValidator.getCalculations),
+        controller.indexPartition
+      )
+      .post(
+        "/",
+        auth.verifyAuth,
+        validate(ShapeValidator.calculateArea),
+        controller.calculateArea
+      );
   }
 }
 
