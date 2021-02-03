@@ -5,7 +5,7 @@ const data = [
   {
     name: "Admin",
     email: "admin@mail.com",
-    password: "123456",
+    password: "12345678",
     created_at: now,
     updated_at: now
   }
