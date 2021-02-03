@@ -11,7 +11,7 @@ import { Dimensions } from "../../common/interfaces/shape-dimensions";
 
 class ShapeService extends CrudService {
   public model = Shape;
-  public modelName = "Shape";
+  public modelName = "Calculation";
 
   public calculateArea(shape: string, dimensions: Dimensions): number | null {
     let area;

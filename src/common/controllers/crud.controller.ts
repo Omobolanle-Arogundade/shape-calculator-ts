@@ -113,6 +113,7 @@ export default abstract class CrudController extends HttpController {
   public update = async (req: Request, res: Response): Promise<Response> => {
     const id = +req.params.id;
     const data = await this.service.get(id);
+
     if (!data)
       return this.returnNotFound(
         res,
@@ -120,7 +121,10 @@ export default abstract class CrudController extends HttpController {
       );
 
     try {
-      const newData = (await this.service.update(req.body, id))[1][0];
+      const newData = (await this.service.update(req.body, id))[1][
+        "dataValues"
+      ];
+
       if (newData)
         return this.return(
           res,

@@ -1,7 +1,6 @@
 import { Response } from "express";
 import { ExceptionHandler } from "../handlers/exception.handler";
 import { HTTP } from "../constants/http.constant";
-import logger from "../../../config/logger";
 
 export default abstract class HttpController extends ExceptionHandler {
   /**
