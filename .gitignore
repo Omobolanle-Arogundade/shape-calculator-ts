@@ -9,5 +9,5 @@ temp/
 package-lock.json
 yarn-error.log
 dist/
-src/database/migration-metadata.json
-src/database/seeder-metadata.json
+database/migration-metadata.json
+database/seeder-metadata.json
