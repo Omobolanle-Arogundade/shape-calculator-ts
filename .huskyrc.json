@@ -1,0 +1,8 @@
+{
+  "hooks": {
+    "post-checkout": "yarn",
+    "pre-commit": "lint-staged",
+    "pre-push": "tsc",
+    "post-commit": "git status"
+  }
+}

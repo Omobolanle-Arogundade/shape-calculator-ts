@@ -1,0 +1,7 @@
+
+> libpq@1.8.9 install /Users/omobolanle/Documents/projects/node/asb-coding-assignment/node_modules/libpq
+> node-gyp rebuild
+
+shapes-area-api@1.0.0 /Users/omobolanle/Documents/projects/node/asb-coding-assignment
+└── UNMET PEER DEPENDENCY pg-native@>=2.0.0
+
