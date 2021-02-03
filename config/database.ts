@@ -16,6 +16,10 @@ const defaultConfig = {
   dialect: dialect || "postgres", //default is 'posgres'
   dialectOptions: {
     dateStrings: true,
+    ssl: {
+      require: true,
+      rejectUnauthorized: false // <<<<<< YOU NEED THIS
+    },
     typeCast: (field, next): any => {
       if (field.type === "DATETIME") return field.string();
       return next();

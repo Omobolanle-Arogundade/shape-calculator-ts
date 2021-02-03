@@ -8,12 +8,16 @@
     "prebuild:dev": "rm -rf build",
     "build:dev": "tsc",
     "postbuild:dev": "pm2 start ecosystem.config.json && pm2 log",
-    "prebuild": "sudo  rm -rf build",
+    "prebuild": "sudo rm -rf build && npm run migrate && npm run seed",
     "build": "sudo tsc",
     "postbuild": "sudo pm2 start ecosystem.config.json && sudo pm2 log",
     "stop": "pm2 delete all",
-    "db:migrate": "rm -rf build && tsc && sequelize db:migrate",
-    "db:seed": "rm -rf build && tsc && sequelize db:seed:all"
+    "migrate": "rm -rf build && tsc && sequelize db:migrate",
+    "seed": "rm -rf build && tsc && sequelize db:seed:all"
+  },
+  "engines": {
+    "node": ">10.14.2",
+    "npm": ">6.4.1"
   },
   "repository": {
     "type": "git",
