@@ -12,9 +12,11 @@ export class ShapeValidator {
           "any.required": `Shape is a required field`
         }),
       dimensions: Joi.object()
+        .required()
         .keys({
           side: Joi.number()
             .min(1)
+            .forbidden()
             .messages({
               "number.empty": `side cannot be an empty field`,
               "number.min": `side should have a minimum value of {#limit}`,
@@ -22,6 +24,7 @@ export class ShapeValidator {
             }),
           length_a: Joi.number()
             .min(1)
+            .forbidden()
             .messages({
               "number.empty": `length_a cannot be an empty field`,
               "number.min": `length_a should have a minimum value of {#limit}`,
@@ -29,6 +32,7 @@ export class ShapeValidator {
             }),
           length_b: Joi.number()
             .min(1)
+            .forbidden()
             .messages({
               "number.empty": `length_b cannot be an empty field`,
               "number.min": `length_b should have a minimum value of {#limit}`,
@@ -36,6 +40,7 @@ export class ShapeValidator {
             }),
           length_c: Joi.number()
             .min(1)
+            .forbidden()
             .messages({
               "number.empty": `length_c cannot be an empty field`,
               "number.min": `length_c should have a minimum value of {#limit}`,
@@ -43,6 +48,7 @@ export class ShapeValidator {
             }),
           radius: Joi.number()
             .min(1)
+            .forbidden()
             .messages({
               "number.empty": `radius cannot be an empty field`,
               "number.min": `radius should have a minimum value of {#limit}`,
@@ -50,6 +56,7 @@ export class ShapeValidator {
             }),
           length: Joi.number()
             .min(1)
+            .forbidden()
             .messages({
               "number.empty": `length cannot be an empty field`,
               "number.min": `length should have a minimum value of {#limit}`,
@@ -57,6 +64,7 @@ export class ShapeValidator {
             }),
           breadth: Joi.number()
             .min(1)
+            .forbidden()
             .messages({
               "number.empty": `breadth cannot be an empty field`,
               "number.min": `breadth should have a minimum value of {#limit}`,
