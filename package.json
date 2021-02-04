@@ -9,7 +9,7 @@
     "build:dev": "tsc && cp ./src/index.html ./build/src/",
     "postbuild:dev": "pm2 start ecosystem.config.json && pm2 log",
     "prebuild": "rm -rf build",
-    "build": "tsc && & cp ./src/index.html ./build/src/",
+    "build": "tsc && cp ./src/index.html ./build/src/",
     "start": "npm run migrate && pm2-runtime start ecosystem.config.json",
     "stop": "pm2 delete all",
     "migrate": "sequelize db:migrate",
