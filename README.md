@@ -1,6 +1,113 @@
-# asb-coding-assignment
+# SHAPES AREA CALCULATOR API
 
-# SHAPE AREA CALCULATOR API
+# About Shapes area calculator
+
+Shapes Area calculator is an API that is used for calculating the area of different shapes.
+
+[Documentation](https://abs-shape-calculator.herokuapp.com)
+
+[Postman Documentation](https://documenter.getpostman.com/view/6660848/TW73EkP3)
+
+[Postman Collection](https://www.getpostman.com/collections/f14cdeb86f5aa85b09f7)
+
+# Built with love by:
+
+|                                        [Omobolanle Aro](https://github.com/Omobolanle-Arogundade)                                         |
+| :---------------------------------------------------------------------------------------------------------------------------------------: |
+| [<img src="https://i.ibb.co/NS4FLKP/Screen-Shot-2021-02-04-at-8-53-21-AM.png" width = "200" />](https://github.com/Omobolanle-Arogundade) |
+| [<img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/omobolanle-aro-00a98a172/)  |  |
+
+## Features
+
+- **[Typescript](https://www.typescriptlang.org/)**: JavaScript and More
+
+- **PostgreSQL database**: [PostgreSQL](https://www.postgresql.org/) object relational mapping using [Sequelize](https://sequelize.org/)
+
+- **Authentication and authorization**: using [JSONWebToken](https://www.npmjs.com/package/jsonwebtoken)
+
+- **Validation**: request data validation using [Joi](https://github.com/hapijs/joi)
+
+- **Logging**: using [winston](https://github.com/winstonjs/winston) and [morgan](https://github.com/expressjs/morgan)
+
+- **Testing**: unit and integration tests using [Jest](https://jestjs.io)
+
+- **Error handling**: centralized error handling mechanism
+
+- **API documentation**: with [DocGen](https://github.com/thedevsaddam/docgen) and [Postman API Documentation Tool](https://www.postman.com/api-documentation-tool/)
+
+- **Process management**: advanced production process management using [PM2](https://pm2.keymetrics.io)
+
+- **Dependency management**: with [Yarn](https://yarnpkg.com)
+
+- **CORS**: Cross-Origin Resource-Sharing enabled using [cors](https://github.com/expressjs/cors)
+
+- **Git hooks**: with [husky](https://github.com/typicode/husky) and [lint-staged](https://github.com/okonet/lint-staged)
+
+- **Linting**: with [ESLint](https://eslint.org) and [Prettier](https://prettier.io)
+
+- **Editor config**: consistent editor configuration using [EditorConfig](https://editorconfig.org)
+
+## Getting Started
+
+### Installation
+
+Clone the repo:
+
+```bash
+
+git clone https://github.com/Omobolanle-Arogundade/asb-coding-assignment
+
+cd asb-coding-assignment
+
+```
+
+Install the pm2:
+
+```bash
+
+npm i -g pm2
+
+```
+
+Install the dependencies:
+
+```bash
+
+yarn install
+
+```
+
+Set the environment variables:
+
+```bash
+
+cp .env.example .env
+
+
+
+# open .env and modify the environment variables (if needed)
+
+```
+
+### Commands
+
+Running locally:
+
+```bash
+
+npm run build:dev
+
+```
+
+Running in production:
+
+```bash
+
+npm run build
+
+```
+
+# API Documentation
 
 ## Indices
 
