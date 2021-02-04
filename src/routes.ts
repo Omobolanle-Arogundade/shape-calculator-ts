@@ -26,7 +26,7 @@ export class IndexRoute {
     this.initApi();
     // this.router.use("/auth", AuthRouter);
     this.router.all("*", (req, res): any =>
-      res.send(`Welcome to ${name} v-${version}`)
+      res.sendfile(__dirname + "/index.html")
     );
   }
 

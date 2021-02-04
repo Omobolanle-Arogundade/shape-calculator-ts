@@ -8,7 +8,7 @@ export class Circle extends Shape {
   }
 
   public getArea(): number {
-    return Math.PI * this.radius * this.radius;
+    return +(Math.PI * this.radius * this.radius).toFixed(2);
   }
 }
 
@@ -23,9 +23,9 @@ export class Triangle extends Shape {
 
   public getArea(): number {
     const s = (this.length_a + this.length_b + this.length_c) / 2;
-    return Math.sqrt(
+    return +Math.sqrt(
       s * ((s - this.length_a) * (s - this.length_b) * (s - this.length_c))
-    );
+    ).toFixed(2);
   }
 }
 
@@ -35,7 +35,7 @@ export class Rectangle extends Shape {
   }
 
   public getArea(): number {
-    return this.length * this.breadth;
+    return +(this.length * this.breadth).toFixed(2);
   }
 }
 
