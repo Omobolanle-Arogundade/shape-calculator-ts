@@ -2,20 +2,20 @@ module.exports = {
   parser: "@typescript-eslint/parser",
   env: {
     es6: true,
-    node: true,
+    node: true
   },
   plugins: ["@typescript-eslint"],
   extends: [
     "plugin:@typescript-eslint/recommended",
-    "prettier/@typescript-eslint",
+    "prettier/@typescript-eslint"
   ],
   globals: {
     Atomics: "readonly",
-    SharedArrayBuffer: "readonly",
+    SharedArrayBuffer: "readonly"
   },
   parserOptions: {
     ecmaVersion: 2018,
-    sourceType: "module",
+    sourceType: "module"
   },
   rules: {
     camelcase: "off",
@@ -24,6 +24,6 @@ module.exports = {
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/no-namespace": "off",
     "@typescript-eslint/no-parameter-properties": "off",
-    "@typescript-eslint/no-var-requires": "off",
-  },
+    "@typescript-eslint/no-var-requires": "off"
+  }
 };
