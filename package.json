@@ -11,7 +11,6 @@
     "prebuild": "rm -rf build",
     "build": "tsc && cp ./src/index.html ./build/src/",
     "start": "npm run migrate && pm2-runtime start ecosystem.config.json",
-    "postbuild": "npm run migrate && pm2-runtime start ecosystem.config.json",
     "stop": "pm2 delete all",
     "migrate": "sequelize db:migrate",
     "seed": "sequelize db:seed:all"
