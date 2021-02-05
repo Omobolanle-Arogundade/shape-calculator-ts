@@ -91,7 +91,7 @@ cp .env.example .env
 
 ### Commands
 
-Running locally:
+Build locally:
 
 ```bash
 
@@ -99,13 +99,21 @@ npm run build:dev
 
 ```
 
-Running in production:
+Build for production:
 
 ```bash
 
 npm run build
 
 ```
+
+Run the app:
+```bash
+
+npm start
+
+```
+
 
 # API Documentation
 
